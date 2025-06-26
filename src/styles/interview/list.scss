@@ -1,0 +1,144 @@
+   @use "../variables" as *;
+
+   .list {
+  max-width: 800px;
+  margin: auto;
+  background-color: $white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__intro {
+    background-color: $card-bg;
+    border: 1px solid #7dd3fc;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  &__question-block {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  &__interviewer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__question-title {
+    margin: 0.5rem 0;
+  }
+
+  &__question-text {
+    display: none;
+    font-size: 1.1rem;
+    margin-top: 0.75rem;
+
+    &.is-visible {
+      display: block;
+    }
+  }
+
+  &__timer {
+    font-weight: bold;
+    color: $destructive;
+    margin-top: 0.75rem;
+  }
+
+  &__button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: $accent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $accent-hover;
+    }
+
+    &--done {
+      background-color: $success;
+      margin-left: 1rem;
+
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  &__submit {
+    display: block;
+       padding: 0.7rem 1.2rem;
+    margin-top: 2.5rem;
+    background-color: $success;
+    color: $white;
+    font-size: 1.125rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__avatar {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__button {
+      width: 100%;
+      margin: 0.5rem 0 0 0;
+    }
+
+    &__button--done {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__submit {
+      font-size: 1rem;
+    }
+  }
+}

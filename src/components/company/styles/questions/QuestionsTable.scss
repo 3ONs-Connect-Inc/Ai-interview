@@ -1,0 +1,110 @@
+@use "../../../../styles/variables" as *;
+
+.questions-table {
+  padding: 2rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  &__heading {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: $text;
+  }
+
+  &__loading {
+    text-align: center;
+    color: $color-muted;
+  }
+
+  &__responsive {
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: $white;
+
+    th, td {
+      padding: 1rem;
+      border: 1px solid #e5e7eb;
+      vertical-align: top;
+      text-align: left;
+   font-size: 0.875rem;
+    }
+
+    th {
+      background: $thead;
+      font-weight: 600;
+       
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+  }
+
+  &__row {
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #eef2f7;
+    }
+  }
+
+  &__list {
+    padding-left: 1.2rem;
+    list-style-type: disc;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &--edit {
+      background: #e0f2fe;
+      color: #0284c7;
+
+      &:hover {
+        background: #bae6fd;
+      }
+    }
+
+    &--delete {
+      background: #fee2e2;
+      color: $destructive;
+
+      &:hover {
+        background: #fecaca;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+
+    &__heading {
+      font-size: 1.5rem;
+    }
+
+    &__btn {
+      font-size: 0.75rem;
+    }
+  }
+}

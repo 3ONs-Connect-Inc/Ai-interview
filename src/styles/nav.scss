@@ -1,0 +1,106 @@
+@use "./variables" as *;
+
+.nav {
+  position: sticky;
+  top: 0;
+  background: $primary-background;
+  color: #fff;
+  z-index: 1000;
+  width: 100%;
+  
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    span.nav__dot {
+      color: #3b82f6; 
+      font-size: 2rem;
+      font-weight: bolder;
+    }
+  }
+
+  &__auth {
+    position: relative;
+
+    .nav__signin {
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      font-size: 1rem;
+      color: #fff;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: $primary-background;
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+    button {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    &--mobile {
+      position: relative;
+      top: 0;
+      right: 0;
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: $secondary-background;
+    padding: 1rem 2rem;
+
+    
+
+    button {
+      background: none;
+      border: none;
+      color: #fff;
+      text-align: left;
+      padding: 0.5rem 0;
+      cursor: pointer;
+    }
+  }
+
+  // Responsive
+  @media (max-width: 896px) {
+    &__auth {
+      display: none;
+    }
+
+    &__mobile-toggle {
+      display: block;
+    }
+
+    &__mobile-menu {
+      display: flex;
+    }
+  }
+}
